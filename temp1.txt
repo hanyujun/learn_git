@@ -1,4 +1,7 @@
 git init 
 git add 
 git commit -m 
-
+git branch 
+git diff
+git status
+git stash
