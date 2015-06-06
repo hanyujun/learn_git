@@ -6,6 +6,7 @@ ipdb.set_trace()
 a = raw_input('please input the data')
 print a 
 print 'hello %s ,you  have  $%d' %('jack',100000)
+ipdb.set_trace()
 print ord('a')
 print chr(65)
 def action(x):
