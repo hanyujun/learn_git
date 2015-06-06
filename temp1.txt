@@ -14,3 +14,4 @@ git push -u origin master
 将本地的更新推送到远程仓库
 git branch branch_name
 git checkout branch_name
+test git how to use git branch and how to use git chenckout 
