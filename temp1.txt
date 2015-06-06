@@ -15,3 +15,8 @@ git push -u origin master
 git branch branch_name
 git checkout branch_name
 test git how to use git branch and how to use git chenckout 
+$ git merge feature1
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
