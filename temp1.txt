@@ -15,4 +15,13 @@ git push -u origin master
 git branch branch_name
 git checkout branch_name
 test git how to use git branch and how to use git chenckout
-test in which case can get conflict 
+test in which case can get conflict
+好吧，要使用这个功能还需要一个条件，就是系统的 shell 需要选用 bash 。在 git/contrib/completion 目录下有 git-completion.bash 这个文件。把这个文件复制到系统目录：
+
+$ cp git/contrib/completion/git-completion.bash ~/.git-completion.bash
+
+    在 .bashrc 中加入：
+
+source ~/.git-completion.bash
+
+    OK ，现在我们可以试一下效果了： 
