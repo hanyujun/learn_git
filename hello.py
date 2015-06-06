@@ -1,9 +1,13 @@
 #! usr/bin/env python
 #-*-coding:utf-8-*-
 print u'中文'
+import pdb
+pdb.set_trace()
 a = raw_input('please input the data')
 print a 
 print 'hello %s ,you  have  $%d' %('jack',100000)
+import pdb
+pdb.set_trace()
 print ord('a')
 print chr(65)
 def action(x):
