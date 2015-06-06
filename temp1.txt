@@ -5,3 +5,5 @@ git branch
 git diff
 git status
 git stash
+git log
+
