@@ -1,16 +1,53 @@
 #! usr/bin/env python
 #-*-coding:utf-8-*-
-print u'中文'
-import pdb
-pdb.set_trace()
-a = raw_input('please input the data')
-print a 
-print 'hello %s ,you  have  $%d' %('jack',100000)
-import pdb
-pdb.set_trace()
-print ord('a')
-print chr(65)
-def action(x):
-    return lambda y:x+y
-str1 = 'test how to divide the screen'
+import cPickle
+import json
+from datetime import datetime
+import sys
+REDIS_CLEINTS = [1,2,3,4,5]
+class Worker(object):
+    def __init__(self, name, score):
+        self.__name = name
+        self.__score = score
 
+    def print_score(self):
+        print('%s: %s' % (self.__name, self.__score))
+
+def test_taglist_upadte():
+    now = datetime.now()
+def test_cPickle():
+    l = [1, 3, 2, 5]
+    d ={'stu1': 21, 'stu2':22}
+    lp = cPickle.dumps(l)
+    print lp
+    lpl = cPickle.loads(lp) 
+    print lpl
+    dp = cPickle.dumps(d)
+    print dp
+    dpd = cPickle.loads(dp)
+    print dpd
+def use_generator():
+    lists = [x * x for x in range(10)]
+    generator = (x * x for x in range(10))
+    print lists
+    print generator
+    for g in generator:
+        print g
+
+def get_redis_client():
+    index = 0
+    count = len(REDIS_CLEINTS)
+    while True:
+        yield REDIS_CLEINTS[index]
+        index = index + 1
+        if index == count:
+            index = 0
+
+random_num = get_redis_client().next
+
+if __name__=='__main__':
+    index = 0
+    while index < 100:
+        client = random_num()
+        print client
+        index = index + 1
