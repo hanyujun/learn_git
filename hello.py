@@ -43,11 +43,19 @@ def get_redis_client():
         if index == count:
             index = 0
 
+def dbjhash22(hash_str):
+    base = 5831
+    for c in hash_str:
+        base =((base << 5) + base) + ord(c)
+    return base
 random_num = get_redis_client().next
 
 if __name__=='__main__':
-    index = 0
-    while index < 100:
-        client = random_num()
-        print client
-        index = index + 1
+    hash_str = 'api2:user:2829978'
+    base = dbjhash22(hash_str)
+    print base
+    #index = 0
+    #while index < 100:
+        #client = random_num()
+        #print client
+        #index = index + 1
